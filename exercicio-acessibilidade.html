@@ -123,12 +123,10 @@ Empty link
       data-uk-search="{'source': 'https://informatica.ulusofona.pt/wp-admin/admin-ajax.php?action=warp_search', 'param'
       : 's', 'msgResultsHeader': 'Resultados de pesquisa', 'msgMoreResults': 'More Results',
       'msgNoResults': 'No results found', flipDropdown: 1}">
-  <label>safado... <input placeholder="pesquisar..." /></label>
-Missing form label
+  Missing form label
+  <label for="name"> Search: </label> <!-- Adicionei o id com o nome de name e dei label com search  -->
+<input class="uk-search-field" type="text" value="" name="s" id = "name" placeholder="pesquisar..." autocomplete="off">
 
-<label>Click me <input type="text" /></label>
-<input class="uk-search-field" type="text" value="" name="s" placeholder="pesquisar..." autocomplete="off">
-  <label>safado... <input placeholder="pesquisar..." /></label>
 
 
 </form>
@@ -184,19 +182,19 @@ Aside
 <aside class="tm-sidebar-b uk-width-medium-1-4" style="min-height: 876.891px;">
 <div class="uk-panel uk-panel-space widget_ultimate_posts">
 Heading level 3Skipped heading level
-<h3 class="uk-panel-title">
+<h2 class="uk-panel-title">
 Notícias Recentes
-</h3>
+</h2>
 <div class="upw-posts hfeed">
 <article class="post-3668 post type-post status-publish format-standard hentry category-noticias tag-deisi">
 <header>
-Heading level 4
-<h4 class="entry-title">
+Heading level 3
+<h3 class="entry-title">
 Very low contrast
-<a href="https://informatica.ulusofona.pt/noticias/7a-conferencia-consenso-em-sistemas-descentralizados/" rel="bookmark" style="color: rgb(36, 36, 36); background-color: rgb(255, 255, 255);">
+<a  rel="bookmark" style="color: rgb(36, 36, 36); background-color: rgb(255, 255, 255);">
 7ª conferência – Consenso em Sistemas Descentralizados
 </a>
-</h4>
+</h3>
 <div class="entry-meta" style="color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">
   <!-- Um dos erros de contraste-->
 Very low contrast
@@ -235,10 +233,10 @@ Linked image missing alternative text
 </div>
 </div>
 <div class="uk-panel widget_text">
-Heading level 3
-<h3 class="uk-panel-title">
+Heading level 4  <!-- os heading levels estavam mal feitos-->
+<h4> class="uk-panel-title">
 Serviços Online
-</h3>
+</h4>
 Unordered list
 <ul class="uk-list uk-list-line">
 <li>
@@ -408,21 +406,29 @@ Loading Comments...
 <span id="jp-carousel-comment-form-spinner"></span>
 <div id="jp-carousel-comment-post-results"></div>
 <form id="jp-carousel-comment-form">
-Orphaned form label
-<label for="jp-carousel-comment-form-comment-field" class="screen-reader-text">
+Orphaned form label <!-- Apaguei a label visto que nao tinha nenhuma form associada a mesma, apenas div->
 Write a Comment...
 </label>
 Missing form label
-<textarea autocomplete="new-password" id="comment" name="hcb7389899" class="jp-carousel-comment-form-field jp-carousel-comment-form-textarea" placeholder="Write a Comment..."></textarea>
+<textarea autocomplete="new-password" id="comment" name="hcb7389899" aria-label="comment"
+         class="jp-carousel-comment-form-field jp-carousel-comment-form-textarea"
+          placeholder="Write a Comment..."></textarea>
 ARIA hiddenARIA tabindexMissing form label
-<textarea id="a583cf21f5b6e7f4d7ef09da0590b100" aria-hidden="true" name="comment" autocomplete="new-password" style="padding:0 !important;clip:rect(1px, 1px, 1px, 1px) !important;position:absolute !important;white-space:nowrap !important;height:1px !important;width:1px !important;overflow:hidden !important;" tabindex="-1"></textarea>
+
+<textarea id="a583cf21f5b6e7f4d7ef09da0590b100" aria-hidden="true" name="comment" aria-label="password"
+          autocomplete="new-password" style="padding:0 !important;clip:rect(1px, 1px, 1px, 1px)
+          !important;position:absolute !important;white-space:nowrap !important;height:1px
+          !important;width:1px !important;overflow:hidden
+           !important;" tabindex="-1"></textarea> <!-- Adicionei aria-label="" no text area-->
 <script data-noptimize="" type="text/javascript">
 document.getElementById("comment").setAttribute( "id", "a583cf21f5b6e7f4d7ef09da0590b100" );document.getElementById("hcb7389899").setAttribute( "id", "comment" );
 </script>
 <div id="jp-carousel-comment-form-submit-and-info-wrapper">
 <div id="jp-carousel-comment-form-commenting-as">
 Fieldset missing legend
+
 <fieldset>
+  <legend>O teu Email</legend> <!-- Adicionei uma legenda ao campo em falta -->
 Form label
 <label for="jp-carousel-comment-form-email-field">
 Email (Required)
@@ -431,6 +437,7 @@ Email (Required)
 </fieldset>
 Fieldset missing legend
 <fieldset>
+  <legend> jp carousel comment form author field</legend>
 Form label
 <label for="jp-carousel-comment-form-author-field">
 Name (Required)
@@ -439,8 +446,9 @@ Name (Required)
 </fieldset>
 Fieldset missing legend
 <fieldset>
+  <legend>Carousel comment form-url field</legend>
 Form label
-<label for="jp-carousel-comment-form-url-field">
+<label for="jp-carousel-comment-form-url-field"> <!-- legenda feita por mim-->
 Website
 </label>
 <input type="text" name="url" class="jp-carousel-comment-form-field jp-carousel-comment-form-text-field" id="jp-carousel-comment-form-url-field">
